@@ -1,20 +1,22 @@
 # see http://iamvery.com/2015/02/17/rails-new-for-you.html
+
 def commit(message)
   git add: "."
   git commit: "-m '#{message}'"
 end
 
-def download_file(url, directory = ".")
+def copy_file(file_name, directory = ".")
   inside(directory) do
-    run "curl --location --remote-name #{url}"
+    puts "CURRENT PATH: #{File.dirname(__FILE__)}"
+    file_path = File.expand_path("files/#{file_name}", File.dirname(__FILE__))
+    run "cp #{file_path} ."
   end
 end
 
 git :init
 commit "Create Rails app"
 
-run "rm README.rdoc"
-download_file "https://raw.githubusercontent.com/CodingItWrong/rails-template/master/files/README.md"
+copy_file "README.md"
 run %Q{sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md}
 commit "Use markdown readme"
 
