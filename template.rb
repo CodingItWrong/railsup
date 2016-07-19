@@ -60,6 +60,10 @@ run "bundle binstubs rspec-core"
 run "rails generate rspec:install"
 commit "Set up RSpec"
 
+copy_file "bin/sample-data", "bin"
+commit "Add sample data script"
+
+
 # TODO clean up gem file
 # TODO Ruby version in gemfile?
 # TODO better error output
