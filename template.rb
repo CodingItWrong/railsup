@@ -20,6 +20,9 @@ copy_file "README.md"
 run %Q{sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md}
 commit "Use markdown readme"
 
+copy_file ".rubocop.yml"
+commit "Add rubocop code style config"
+
 run "sed -i '' '/^.*#/ d' Gemfile"
 commit "Remove Gemfile comments"
 
