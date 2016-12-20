@@ -36,7 +36,7 @@ end
 commit "Add Faker for sample data"
 
 gem_group :development, :test do
-  gem "dotenv"
+  gem "dotenv-rails"
   gem "pry-rails"
   gem "rspec-rails"
 end
