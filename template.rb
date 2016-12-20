@@ -33,7 +33,7 @@ gem_group :development do
   gem "faker"
 end
 
-commit "Add Faker for sample data"
+commit "Add development gems"
 
 gem_group :development, :test do
   gem "dotenv-rails"
