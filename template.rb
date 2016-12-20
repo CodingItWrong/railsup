@@ -64,6 +64,10 @@ run "bundle binstubs rspec-core"
 run "rails generate rspec:install"
 commit "Set up RSpec"
 
+gem "slim"
+
+commit "Add slim templates"
+
 copy_file "bin/sample-data", "bin"
 commit "Add sample data script"
 
