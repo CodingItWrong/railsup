@@ -30,6 +30,7 @@ run "sed -i '' '/tzinfo-data/ d' Gemfile"
 commit "Remove unused gems"
 
 gem_group :development do
+  gem "bullet"
   gem "faker"
 end
 
