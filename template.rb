@@ -32,18 +32,22 @@ run "sed -i '' '/jbuilder/ d' Gemfile"
 run "sed -i '' '/tzinfo-data/ d' Gemfile"
 commit "Remove unused gems"
 
+gem "slim"
+
+commit "Add slim templates"
+
 gem_group :development do
   gem "bullet"
   gem "faker"
 end
-
-commit "Add development gems"
 
 gem_group :development, :test do
   gem "dotenv-rails"
   gem "pry-rails"
   gem "rspec-rails"
 end
+
+commit "Add development gems"
 
 gem_group :test do
   gem "capybara"
@@ -54,12 +58,9 @@ commit "Add testing gems"
 
 gem_group :production do
   gem "rails_12factor"
+  gem "rack-attack"
 end
-commit "Add 12factor gem for running on Heroku"
-
-gem "rack-attack"
-
-commit "Add rack-attack gem for throttling"
+commit "Add production gems"
 
 run "bundle install"
 commit "Bundle gems"
@@ -67,10 +68,6 @@ commit "Bundle gems"
 run "bundle binstubs rspec-core"
 run "rails generate rspec:install"
 commit "Set up RSpec"
-
-gem "slim"
-
-commit "Add slim templates"
 
 copy_file "bin/sample-data", "bin"
 commit "Add sample data script"
