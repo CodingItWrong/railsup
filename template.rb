@@ -53,6 +53,10 @@ gem_group :production do
 end
 commit "Add 12factor gem for running on Heroku"
 
+gem "rack-attack"
+
+commit "Add rack-attack gem for throttling"
+
 run "bundle install"
 commit "Bundle gems"
 
