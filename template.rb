@@ -1,11 +1,11 @@
 # see http://iamvery.com/2015/02/17/rails-new-for-you.html
 
 def commit(message)
-  git add: "."
+  git add: '.'
   git commit: "-m '#{message}'"
 end
 
-def copy_file(file_name, directory = ".")
+def copy_file(file_name, directory = '.')
   inside(directory) do
     puts "CURRENT PATH: #{File.dirname(__FILE__)}"
     file_path = File.expand_path("files/#{file_name}", File.dirname(__FILE__))
@@ -14,65 +14,64 @@ def copy_file(file_name, directory = ".")
 end
 
 git :init
-commit "Create Rails app"
+commit 'Create Rails app'
 
-copy_file "README.md"
-run %Q{sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md}
-commit "Use markdown readme"
+copy_file 'README.md'
+run %(sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md)
+commit 'Use markdown readme'
 
-copy_file ".rubocop.yml"
-commit "Add rubocop code style config"
+copy_file '.rubocop.yml'
+commit 'Add rubocop code style config'
 
 run "sed -i '' '/^.*#/ d' Gemfile"
-commit "Remove Gemfile comments"
+commit 'Remove Gemfile comments'
 
 run "sed -i '' '/byebug/ d' Gemfile"
 run "sed -i '' '/coffee-rails/ d' Gemfile"
 run "sed -i '' '/jbuilder/ d' Gemfile"
 run "sed -i '' '/tzinfo-data/ d' Gemfile"
-commit "Remove unused gems"
+commit 'Remove unused gems'
 
-gem "slim"
+gem 'slim'
 
-commit "Add slim templates"
+commit 'Add slim templates'
 
 gem_group :development do
-  gem "bullet"
-  gem "faker"
+  gem 'bullet'
+  gem 'faker'
 end
 
 gem_group :development, :test do
-  gem "dotenv-rails"
-  gem "pry-rails"
-  gem "rspec-rails"
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
-commit "Add development gems"
+commit 'Add development gems'
 
 gem_group :test do
-  gem "capybara"
-  gem "factory_girl_rails"
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
-commit "Add testing gems"
+commit 'Add testing gems'
 
 gem_group :production do
-  gem "rails_12factor"
-  gem "rack-attack"
+  gem 'rails_12factor'
+  gem 'rack-attack'
 end
-commit "Add production gems"
+commit 'Add production gems'
 
-run "bundle install"
-commit "Bundle gems"
+run 'bundle install'
+commit 'Bundle gems'
 
-run "bundle binstubs rspec-core"
-run "rails generate rspec:install"
-commit "Set up RSpec"
+run 'bundle binstubs rspec-core'
+run 'rails generate rspec:install'
+commit 'Set up RSpec'
 
-copy_file "bin/sample-data", "bin"
-commit "Add sample data script"
+copy_file 'bin/sample-data', 'bin'
+commit 'Add sample data script'
 
-
-# TODO clean up gem file
-# TODO Ruby version in gemfile?
-# TODO better error output
+# TODO: clean up gem file
+# TODO: Ruby version in gemfile?
+# TODO: better error output
