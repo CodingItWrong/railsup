@@ -1,5 +1,3 @@
-# see http://iamvery.com/2015/02/17/rails-new-for-you.html
-
 def commit(message)
   git add: '.'
   git commit: "-m '#{message}'"
@@ -16,11 +14,11 @@ end
 git :init
 commit 'Create Rails app'
 
-copy_file 'README.md'
+copy_file '../files/README.md'
 run %(sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md)
 commit 'Use markdown readme'
 
-copy_file '.rubocop.yml'
+copy_file '../files/.rubocop.yml'
 commit 'Add rubocop code style config'
 
 run "sed -i '' '/^.*#/ d' Gemfile"
@@ -31,10 +29,6 @@ run "sed -i '' '/coffee-rails/ d' Gemfile"
 run "sed -i '' '/jbuilder/ d' Gemfile"
 run "sed -i '' '/tzinfo-data/ d' Gemfile"
 commit 'Remove unused gems'
-
-gem 'slim'
-
-commit 'Add slim templates'
 
 gem_group :development do
   gem 'bullet'
@@ -50,11 +44,10 @@ end
 commit 'Add development gems'
 
 gem_group :test do
-  gem 'capybara'
   gem 'factory_girl_rails'
 end
 
-commit 'Add testing gems'
+commit 'Add factory girl'
 
 gem_group :production do
   gem 'rails_12factor'
@@ -69,7 +62,7 @@ run 'bundle binstubs rspec-core'
 run 'rails generate rspec:install'
 commit 'Set up RSpec'
 
-copy_file 'bin/sample-data', 'bin'
+copy_file '../files/bin/sample-data', 'bin'
 commit 'Add sample data script'
 
 # TODO: clean up gem file

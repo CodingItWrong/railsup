@@ -1,0 +1,7 @@
+--api
+--skip-bundle
+--skip-keeps
+--skip-spring
+--skip-test
+--skip-turbolinks
+--database=postgresql
