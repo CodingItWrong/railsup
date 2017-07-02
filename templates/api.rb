@@ -39,6 +39,7 @@ gem_group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'coderay'
 end
 
 commit 'Add development gems'
