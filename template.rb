@@ -38,6 +38,7 @@ end
 gem_group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'coderay'
 end
@@ -45,13 +46,13 @@ end
 commit 'Add development gems'
 
 gem_group :test do
+  gem 'capybara'
   gem 'factory_girl_rails'
 end
 
-commit 'Add factory girl'
+commit 'Add test gems'
 
 gem_group :production do
-  gem 'rails_12factor'
   gem 'rack-attack'
 end
 commit 'Add production gems'
