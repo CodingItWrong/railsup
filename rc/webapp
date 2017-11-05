@@ -1,6 +1,9 @@
+--skip-action-cable
 --skip-bundle
+--skip-coffee
 --skip-keeps
 --skip-spring
 --skip-test
 --skip-turbolinks
+--skip-yarn
 --database=postgresql
