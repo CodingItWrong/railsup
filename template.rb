@@ -47,7 +47,7 @@ commit 'Add development gems'
 
 gem_group :test do
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end
 
 commit 'Add test gems'
