@@ -30,11 +30,9 @@ run "sed -i '' '/jbuilder/ d' Gemfile"
 run "sed -i '' '/tzinfo-data/ d' Gemfile"
 commit 'Remove unused gems'
 
-gem 'dotenv-rails'
-commit 'Add gems for all environments'
-
 gem_group :development do
   gem 'bullet'
+  gem 'dotenv-rails'
   gem 'faker'
 end
 
