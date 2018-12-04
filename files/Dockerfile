@@ -1,8 +1,8 @@
-FROM ruby:2.4.2
+FROM ruby:2.5.1
 
 RUN apt-get update
 RUN apt-get install -y nodejs
-RUN gem install nokogiri -v 1.8.1
+RUN gem install nokogiri -v 1.8.4
 
 RUN mkdir /myapp
 WORKDIR /myapp
