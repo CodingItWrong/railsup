@@ -4,14 +4,13 @@ Creates a new Rails app pre-configured to preferences:
 
 - Removes Spring, Turbolinks, CoffeeScript, and JBuilder
 - Uses Postgres instead of SQLite
-- Uses Slim instead of ERB
 - Uses RSpec instead of Minitest
 - Uses pry instead of byebug
 - Adds:
   - Bullet
   - Capybara
   - Dotenv
-  - Factory Girl
+  - Factory Bot
   - Faker
   - Rack-Attack
   - Rails 12 Factor
