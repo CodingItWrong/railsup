@@ -35,7 +35,6 @@ commit 'Remove unused gems'
 gem_group :development do
   gem 'bullet'
   gem 'dotenv-rails'
-  gem 'faker'
 end
 
 gem_group :development, :test do
