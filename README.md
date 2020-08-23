@@ -8,12 +8,11 @@ Creates a new Rails app pre-configured to preferences:
 - Uses pry instead of byebug
 - Adds:
   - Bullet
-  - Capybara
+  - Capybara with Selenium-Webdriver for JS-enabled system tests
   - Dotenv
   - Factory Bot
   - Rack-Attack
   - Rails 12 Factor
-  - Selenium-Webdriver for JS-enabled system tests
 
 ## Usage
 
