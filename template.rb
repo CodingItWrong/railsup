@@ -49,6 +49,7 @@ commit 'Add development gems'
 gem_group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
+  gem 'rspec_junit_formatter'
 end
 
 commit 'Add test gems'
