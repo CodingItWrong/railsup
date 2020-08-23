@@ -71,12 +71,6 @@ commit 'Set up RSpec'
 copy_file '../files/bin/sample-data', 'bin'
 commit 'Add sample data script'
 
-copy_file 'Dockerfile', '.'
-copy_file 'docker-compose.yml', '.'
-copy_file '../wait-for-it.sh', '.'
-copy_file '../files/bin/docker-start', 'bin'
-commit 'Configure docker'
-
 # TODO: clean up gem file
 # TODO: Ruby version in gemfile?
 # TODO: better error output
