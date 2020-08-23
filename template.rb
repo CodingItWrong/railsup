@@ -62,6 +62,7 @@ commit 'Add production gems'
 run 'bundle install'
 commit 'Bundle gems'
 
+run 'bundle binstubs bundler --force'
 run 'bundle binstubs rspec-core'
 run 'rails generate rspec:install'
 commit 'Set up RSpec'
