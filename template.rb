@@ -50,6 +50,7 @@ gem_group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'rspec_junit_formatter'
+  gem 'selenium-webdriver'
 end
 
 commit 'Add test gems'
