@@ -14,6 +14,7 @@ Creates a new Rails app pre-configured to preferences:
   - Faker
   - Rack-Attack
   - Rails 12 Factor
+  - Selenium-Webdriver for JS-enabled system tests
 
 ## Usage
 
