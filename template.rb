@@ -42,6 +42,7 @@ gem_group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'coderay'
+  gem 'rubocop'
 end
 
 commit 'Add development gems'
